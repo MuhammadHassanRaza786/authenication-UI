@@ -10,6 +10,12 @@ body,
 input {
   font-family: "Poppins", sans-serif;
 }
+.social_icons i{
+  padding: 5px;
+}
+.fa-brands{
+  color: black;
+} 
 
 .container {
   position: relative;
