@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import logo from './img/logo.svg';
 import logo2 from './img/register.svg';
+import './css/signupandsignin.css'
 
 function SignupSignin(){
 
