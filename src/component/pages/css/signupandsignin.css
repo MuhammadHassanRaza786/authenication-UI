@@ -44,6 +44,9 @@ input {
   grid-template-columns: 1fr;
   z-index: 5;
 }
+.error{
+  color: red;
+}
 
 form {
   display: flex;
