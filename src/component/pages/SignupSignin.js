@@ -2,6 +2,8 @@ import React, { useState } from "react";
 import logo from './img/logo.svg';
 import logo2 from './img/register.svg';
 import mainlogo from './img/image-removebg-preview.png';
+import login from './img/login.svg';
+import register from './img/register1.svg';
 import './css/signupandsignin.css'
 
 function SignupSignin() {
@@ -28,11 +30,14 @@ function SignupSignin() {
               <h2 className="title">Sign in</h2>
               <div className="input-field">
                 <i className="fa-solid fa-user"></i>
-                <input /*type="email"*/ placeholder="Email" required />
+                <input type="email" placeholder="Email" required />
               </div>
               <div className="input-field">
                 <i className="fas fa-lock"></i>
-                <input /*type="password"*/ placeholder="Password" required />
+                <input type="password" placeholder="Password" required />
+              </div>
+              <div className="link">
+                <a href="#">Forget Password?</a>
               </div>
               <input type="submit" value="Login" className="btn solid" />
               <p className="social-text">Or Sign in with social platforms</p>
@@ -47,19 +52,19 @@ function SignupSignin() {
               <h2 className="title">Sign up</h2>
               <div className="input-field">
                 <i className="fas fa-user"></i>
-                <input /*type="text"*/ placeholder="First Name" required />
+                <input type="text" placeholder="First Name" required />
               </div>
               <div className="input-field">
                 <i className="fas fa-user"></i>
-                <input /*type="text"*/ placeholder="Last Name" />
+                <input type="text" placeholder="Last Name" />
               </div>
               <div className="input-field">
                 <i className="fas fa-envelope"></i>
-                <input /*type="email"*/ placeholder="Email" required />
+                <input type="email" placeholder="Email" required />
               </div>
               <div className="input-field">
                 <i className="fas fa-lock"></i>
-                <input /*type="password"*/ placeholder="Password" required />
+                <input type="password" placeholder="Password" required />
               </div>
               <input type="submit" className="btn" value="Sign up" />
               <p className="social-text">Or Sign up with social platforms</p>
@@ -85,7 +90,7 @@ function SignupSignin() {
                 Sign up
               </button>
             </div>
-            <img src={logo} className="image" alt="" />
+            <img id="login" src={login} className="image" alt="" />
           </div>
           <div className="panel right-panel">
             <div className="content">
@@ -99,7 +104,7 @@ function SignupSignin() {
                 Sign in
               </button>
             </div>
-            <img src={logo2} className="image" alt="" />
+            <img id="register" src={register} className="image" alt="" />
           </div>
         </div>
       </div>

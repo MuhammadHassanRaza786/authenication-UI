@@ -16,13 +16,21 @@ input {
 .fa-brands{
   color: black;
 } 
-
+#register{
+  height: 500px;
+}
 .container {
   position: relative;
   width: 100%;
   background-color: #fff;
   min-height: 100vh;
   overflow: hidden;
+}
+.link a{
+  color: black;
+}
+.link a:hover{
+  color: #4481eb;
 }
 
 .forms-container {
