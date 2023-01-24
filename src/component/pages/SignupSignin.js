@@ -13,7 +13,9 @@ function SignupSignin() {
   const [first_name, setFirst_name] = useState('');
   const [last_name, setLast_name] = useState(''); 
   const [email, setEmail] = useState('');
+  const [login_email, setLoginEmail] = useState('');
   const [password, setPassword] = useState('');
+  const [login_password, setLoginPassword] = useState('');
   const [errors, setErrors] = useState({});
   
 
@@ -52,8 +54,41 @@ function SignupSignin() {
     return errors;
   }
 
+  const validateLogin = (values)=>{
+    let errors = {};
+    if (!values.login_email) {
+      errors.login_email = "Email address is required";
+    } else if (!/\S+@\S+\.\S+/.test(values.email)) {
+      errors.login_email = "Email address is invalid";
+    }
+    else if (/\d/.test(values.email)) {
+      errors.login_email = "Email address should not contain numbers";
+    }
+    if (!values.login_password) {
+      errors.login_password = "Password is required";
+    } else if (values.password.length < 8) {
+      errors.login_password = "Password must be 8 or more characters";
+    } else if (!/\d/.test(values.password)) {
+      errors.login_password = "Password must contain atleast 1 number";
+    } else if (!/[!@#$%&?]/g.test(values.password)) {
+      errors.login_password = "Password must contain atleast 1 special character";
+    } else if (!/[A-Z]/g.test(values.password)) {
+      errors.login_password = "Password must contain atleast 1 capital letter";
+    }
+    return errors;
+  }
+
 
   const handleSubmit = (event) => {
+    event.preventDefault();
+    const errors = validateLogin({ login_email, login_password});
+    setErrors(errors);
+    if (Object.keys(errors).length === 0) {
+     
+    }
+  }
+
+  const handleSignupSubmit = (event)=>{
     event.preventDefault();
     const errors = validate({ email, password,first_name,last_name });
     setErrors(errors);
@@ -82,23 +117,23 @@ function SignupSignin() {
                 <input
                   /*type="email"*/
                   type="text"
-                  value={email}
-                  onChange={(e) => setEmail(e.target.value)}
+                  value={login_email}
+                  onChange={(e) => setLoginEmail(e.target.value)}
                   placeholder="Email" />
               </div>
-              {errors.email && <p className="error">{errors.email}</p>}
+              {errors.login_email && <p className="error">{errors.login_email}</p>}
               <div className="input-field">
                 <i className="fas fa-lock"></i>
                 <input
                   type="password"
-                  value={password}
-                  onChange={(e) => setPassword(e.target.value)}
+                  value={login_password}
+                  onChange={(e) => setLoginPassword(e.target.value)}
                   placeholder="Password"  />
               </div>
+              {errors.login_password && <p className="error">{errors.login_password}</p>}
               <div>
                 <a href="#">Forget Password?</a>
               </div>
-              {errors.password && <p className="error">{errors.password}</p>}
               <input type="submit" value="Login" className="btn solid" />
               <p className="social-text">Or Sign in with social platforms</p>
               <div className="social_icons">
@@ -108,7 +143,7 @@ function SignupSignin() {
               </div>
 
             </form>
-            <form action="#" className="sign-up-form" onSubmit={handleSubmit}>
+            <form action="#" className="sign-up-form" onSubmit={handleSignupSubmit}>
               <h2 className="title">Sign up</h2>
               <div className="input-field">
                 <i className="fas fa-user"></i>
