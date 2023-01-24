@@ -16,7 +16,18 @@ input {
 .fa-brands{
   color: black;
 } 
-
+.fa-brands:hover{
+  color: #4481eb;
+}
+#signup{
+  height: 500px;
+}
+a{
+  color: black;
+}
+a:hover{
+  color: #4481eb;
+}
 .container {
   position: relative;
   width: 100%;
@@ -86,6 +97,10 @@ form.sign-in-form {
   grid-template-columns: 15% 85%;
   padding: 0 0.4rem;
   position: relative;
+  border: 2px solid #4481eb;
+}
+.input-field:hover{
+  box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px
 }
 
 .input-field i {

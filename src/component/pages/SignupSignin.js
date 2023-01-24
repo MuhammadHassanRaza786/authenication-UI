@@ -2,6 +2,8 @@ import React, { useState } from "react";
 import logo from './img/logo.svg';
 import logo2 from './img/register.svg';
 import mainlogo from './img/image-removebg-preview.png';
+import signin from './img/signin.svg';
+import signup from './img/signup.svg';
 import './css/signupandsignin.css';
 
 
@@ -93,6 +95,9 @@ function SignupSignin() {
                   onChange={(e) => setPassword(e.target.value)}
                   placeholder="Password"  />
               </div>
+              <div>
+                <a href="#">Forget Password?</a>
+              </div>
               {errors.password && <p className="error">{errors.password}</p>}
               <input type="submit" value="Login" className="btn solid" />
               <p className="social-text">Or Sign in with social platforms</p>
@@ -149,7 +154,7 @@ function SignupSignin() {
                 Sign up
               </button>
             </div>
-            <img src={logo} className="image" alt="" />
+            <img id="signin" src={signin} className="image" alt="" />
           </div>
           <div className="panel right-panel">
             <div className="content">
@@ -163,7 +168,7 @@ function SignupSignin() {
                 Sign in
               </button>
             </div>
-            <img src={logo2} className="image" alt="" />
+            <img id="signup" src={signup} className="image" alt="" />
           </div>
         </div>
       </div>
