@@ -58,22 +58,9 @@ function SignupSignin() {
     let errors = {};
     if (!values.login_email) {
       errors.login_email = "Email address is required";
-    } else if (!/\S+@\S+\.\S+/.test(values.email)) {
-      errors.login_email = "Email address is invalid";
-    }
-    else if (/\d/.test(values.email)) {
-      errors.login_email = "Email address should not contain numbers";
     }
     if (!values.login_password) {
       errors.login_password = "Password is required";
-    } else if (values.password.length < 8) {
-      errors.login_password = "Password must be 8 or more characters";
-    } else if (!/\d/.test(values.password)) {
-      errors.login_password = "Password must contain atleast 1 number";
-    } else if (!/[!@#$%&?]/g.test(values.password)) {
-      errors.login_password = "Password must contain atleast 1 special character";
-    } else if (!/[A-Z]/g.test(values.password)) {
-      errors.login_password = "Password must contain atleast 1 capital letter";
     }
     return errors;
   }
