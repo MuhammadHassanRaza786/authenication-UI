@@ -71,7 +71,12 @@ function SignupSignin() {
     const errors = validateLogin({ login_email, login_password});
     setErrors(errors);
     if (Object.keys(errors).length === 0) {
-     
+        const value = {
+          first_name:first_name,
+          last_name:last_name,
+          email:email,
+          password,password
+        }
     }
   }
 
@@ -102,7 +107,6 @@ function SignupSignin() {
               <div className="input-field">
                 <i className="fa-solid fa-user"></i>
                 <input
-                  /*type="email"*/
                   type="text"
                   value={login_email}
                   onChange={(e) => setLoginEmail(e.target.value)}
