@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import logo from './img/logo.svg';
 import logo2 from './img/register.svg';
-import mainlogo from './img/image-removebg-preview.png';
+import mainlogo from './img/logo_5.png';
 import signin from './img/signin.svg';
 import signup from './img/signup.svg';
 import './css/signupandsignin.css';

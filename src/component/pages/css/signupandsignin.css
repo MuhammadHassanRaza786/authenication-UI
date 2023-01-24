@@ -17,7 +17,7 @@ input {
   color: black;
 } 
 .fa-brands:hover{
-  color: #4481eb;
+  color: #0B2647;
 }
 #signup{
   height: 500px;
@@ -26,7 +26,7 @@ a{
   color: black;
 }
 a:hover{
-  color: #4481eb;
+  color: #0B2647;
 }
 .container {
   position: relative;
@@ -149,11 +149,6 @@ form.sign-in-form {
   text-decoration: none;
   font-size: 1.1rem;
   transition: 0.3s;
-}
-
-.social-icon:hover {
-  color: #4481eb;
-  border-color: #4481eb;
 }
 
 .btn {
