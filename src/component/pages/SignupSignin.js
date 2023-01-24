@@ -96,7 +96,7 @@ function SignupSignin() {
       }).then((response) =>{
           if(response.status == 200){
             swal({
-              title: "Thanks For Rigistration!",
+              title: "Thanks For Registration!",
               icon: "success",
               buttons: {
                 confirm : {text:'Login',className:'btn'},
