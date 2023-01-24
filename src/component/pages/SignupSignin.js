@@ -5,6 +5,8 @@ import mainlogo from './img/logo_5.png';
 import signin from './img/signin.svg';
 import signup from './img/signup.svg';
 import './css/signupandsignin.css';
+import swal from 'sweetalert';
+
 
 
 
@@ -25,9 +27,6 @@ function SignupSignin() {
       errors.email = "Email address is required";
     } else if (!/\S+@\S+\.\S+/.test(values.email)) {
       errors.email = "Email address is invalid";
-    }
-    else if (/\d/.test(values.email)) {
-      errors.email = "Email address should not contain numbers";
     }
     if (!values.password) {
       errors.password = "Password is required";
@@ -71,12 +70,6 @@ function SignupSignin() {
     const errors = validateLogin({ login_email, login_password});
     setErrors(errors);
     if (Object.keys(errors).length === 0) {
-        const value = {
-          first_name:first_name,
-          last_name:last_name,
-          email:email,
-          password,password
-        }
     }
   }
 
@@ -85,7 +78,41 @@ function SignupSignin() {
     const errors = validate({ email, password,first_name,last_name });
     setErrors(errors);
     if (Object.keys(errors).length === 0) {
-      // If there are no errors, make the login request to the server
+      const data = {
+        first_name:first_name,
+        last_name:last_name,
+        email:email,
+        password:password,
+        role:{
+          id:1
+        }
+      }
+      fetch("http://localhost:8080/auth/register", {
+        method: 'POST',
+        body: JSON.stringify(data),
+        headers: {
+          'Content-type': 'application/json; charset=UTF-8',
+        },
+      }).then((response) =>{
+          if(response.status == 200){
+            swal({
+              title: "Thanks For Rigistration!",
+              icon: "success",
+              buttons: {
+                confirm : {text:'Login',className:'btn'},
+            },
+            });
+            setFirst_name('');
+            setLast_name('');
+            setEmail('');
+            setPassword('');
+            changeSignupMode('');
+          }
+          else if(response.status == 409){
+            swal("This Email Already Registered!");
+          }
+      }
+      );
     }
   }
   const [signupmode, changeSignupMode] = useState('');
