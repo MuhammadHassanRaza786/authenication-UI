@@ -10,14 +10,14 @@ import { BrowserRouter, Route, Routes } from 'react-router-dom';
 function App() {
   return (
     <>
-    {/* <ForgetPassword/> */}
+    <ForgetPassword/>
     {/* <BrowserRouter>
       <Routes>
         <Route exact path="/linkedin" element={LinkedInCallback} />
         <Route path="/" element={<SignupSignin/>}/>
       </Routes>
     </BrowserRouter> */}
-    <SignupSignin/>
+    {/* <SignupSignin/> */}
     </>
   );
 }

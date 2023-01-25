@@ -28,14 +28,9 @@ function SignupSignin() {
     }
     if (!values.confirmPassword) {
       errors.confirmPassword = "Confirm Password is required";
-    } else if (values.confirmPassword.length < 8) {
-      errors.confirmPassword = "Confirm Password must be 8 or more characters";
-    } else if (!/\d/.test(values.confirmPassword)) {
-      errors.confirmPassword = "Confirm Password must contain atleast 1 number";
-    } else if (!/[!@#$%&?]/g.test(values.confirmPassword)) {
-      errors.confirmPassword = "Confirm Password must contain atleast 1 special character";
-    } else if (!/[A-Z]/g.test(values.confirmPassword)) {
-      errors.confirmPassword = "Confirm Password must contain atleast 1 capital letter";
+    }
+    else if (values.password !== values.confirmPassword) {
+      errors.confirmPassword = "New password and Confirm Password should match";
     }
 
     return errors;
@@ -89,7 +84,14 @@ function SignupSignin() {
           <div className="panel left-panel">
             <div className="content">
               <div className="mainlogo"><img src={mainlogo}></img></div>
-   
+              <p>
+
+              </p>
+              <a href="/">
+                <button className="btn transparent" >
+                  Sign In
+                </button>
+              </a>
             </div>
             <img id="resetimg" src={resetimg} className="image" alt="" />
           </div>
