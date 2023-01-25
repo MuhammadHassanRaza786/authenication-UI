@@ -16,7 +16,18 @@ input {
 .fa-brands{
   color: black;
 } 
-
+.fa-brands:hover{
+  color: #0B2647;
+}
+#signup{
+  height: 500px;
+}
+a{
+  color: black;
+}
+a:hover{
+  color: #0B2647;
+}
 .container {
   position: relative;
   width: 100%;
@@ -86,6 +97,10 @@ form.sign-in-form {
   grid-template-columns: 15% 85%;
   padding: 0 0.4rem;
   position: relative;
+  border: 2px solid #4481eb;
+}
+.input-field:hover{
+  box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px
 }
 
 .input-field i {
@@ -134,11 +149,6 @@ form.sign-in-form {
   text-decoration: none;
   font-size: 1.1rem;
   transition: 0.3s;
-}
-
-.social-icon:hover {
-  color: #4481eb;
-  border-color: #4481eb;
 }
 
 .btn {
@@ -218,6 +228,7 @@ form.sign-in-form {
   font-weight: 600;
   line-height: 1;
   font-size: 1.5rem;
+  margin-top: 20px;
 }
 
 .panel p {
