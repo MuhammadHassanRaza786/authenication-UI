@@ -29,6 +29,9 @@ function SignupSignin() {
     } else if (!/\S+@\S+\.\S+/.test(values.email)) {
       errors.email = "Email address is invalid";
     }
+    else if (/^\d/.test(values.email)) {
+      errors.email = "Email should not contain number in start";
+    }
     if (!values.password) {
       errors.password = "Password is required";
     } else if (values.password.length < 8) {
