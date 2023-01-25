@@ -11,12 +11,13 @@ function App() {
   return (
     <>
     {/* <ForgetPassword/> */}
-    <BrowserRouter>
+    {/* <BrowserRouter>
       <Routes>
         <Route exact path="/linkedin" element={LinkedInCallback} />
         <Route path="/" element={<SignupSignin/>}/>
       </Routes>
-    </BrowserRouter>
+    </BrowserRouter> */}
+    <SignupSignin/>
     </>
   );
 }

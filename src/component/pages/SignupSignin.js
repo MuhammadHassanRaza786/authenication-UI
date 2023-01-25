@@ -64,16 +64,18 @@ function SignupSignin() {
     }
     return errors;
   }
-    const { linkedInLogin } = useLinkedIn({
-      clientId: '775lxvvy64z4lo',
-      redirectUri: `${window.location.origin}/linkedin`, // for Next.js, you can use `${typeof window === 'object' && window.location.origin}/linkedin`
-      onSuccess: (code) => {
-        console.log(code);
-      },
-      onError: (error) => {
-        console.log(error);
-      },
-    });
+    //This code for linkedin
+
+    // const { linkedInLogin } = useLinkedIn({
+    //   clientId: '775lxvvy64z4lo',
+    //   redirectUri: `${window.location.origin}/linkedin`, // for Next.js, you can use `${typeof window === 'object' && window.location.origin}/linkedin`
+    //   onSuccess: (code) => {
+    //     console.log(code);
+    //   },
+    //   onError: (error) => {
+    //     console.log(error);
+    //   },
+    // });
 
 
   const handleSubmit = (event) => {
@@ -166,7 +168,7 @@ function SignupSignin() {
               <input type="submit" value="Login" className="btn solid" />
               <p className="social-text">Or Sign in with social platforms</p>
               <div className="social_icons">
-                <a href="#" onClick={linkedInLogin}><i className="fa-brands fa-linkedin"></i></a>
+                <a href="#"><i className="fa-brands fa-linkedin"></i></a>
                 <a href="#"><i className="fa-brands fa-microsoft"></i></a>
                 <a href="#"><i className="fa-brands fa-google"></i></a>
               </div>
