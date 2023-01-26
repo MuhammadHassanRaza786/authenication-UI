@@ -6,6 +6,8 @@ import ForgetPassword from './component/pages/ForgetPassword';
 import { LinkedInCallback } from 'react-linkedin-login-oauth2';
 
 import { BrowserRouter, Route, Routes } from 'react-router-dom';
+import VerificationEmail from './component/pages/VerificationEmail';
+import ConfirmPin from './component/pages/ConfirmPin';
 
 function App() {
   return (
@@ -17,7 +19,9 @@ function App() {
         <Route path="/" element={<SignupSignin/>}/>
       </Routes>
     </BrowserRouter> */}
-    <SignupSignin/>
+    {/* <SignupSignin/> */}
+    <VerificationEmail></VerificationEmail>
+    {/* <ConfirmPin></ConfirmPin> */}
     </>
   );
 }
